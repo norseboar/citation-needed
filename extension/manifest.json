@@ -1,0 +1,31 @@
+{
+	"name": "Citation Needed",
+	"description": "Extension for revealing the source and context of online citations",
+
+	"version": "1.0",
+	"manifest_version": 2,
+
+	"background": {
+		"persistent": false,
+		"scripts": ["background.js"]
+		},
+	"content_scripts": [
+		{
+			"matches": ["http://*/*", "https://*/*"],
+			"css": ["styles.css", "tipped.css"],
+			"js": [
+				"jquery-2.1.1.min.js",
+				"jquery.highlight-4.js",
+				"tipped.js",
+				"spinners.min.js",
+				"imagesloaded.pkgd.min.js",
+				"excanvas.js",
+				"script.js",
+				"citations.js"],
+			"run_at": "document_end"
+		}
+	],
+	"permissions": [
+	"contextMenus"
+	]
+}
